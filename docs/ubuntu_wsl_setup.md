@@ -1,8 +1,9 @@
 1. Enable WSL and virtual machines (via "Turn Windows features on or off")
 2. Install Ubuntu from Microsoft Store and make sure it's set for WSL 2
    1. Optional: install Windows Terminal
-
-3. In Ubuntu terminal
+3. If unable to install Ubuntu from Windows, open virtual machine and download Iso file from https://ubuntu.com 
+   and follow the procedure.
+4. In Ubuntu terminal
    1. `sudo apt-add-repository -y ppa:rael-gc/rvm`
    2. `sudo apt-get update`
    3. `sudo apt-get install -y redis-server mariadb-server libmariadb-dev rvm nodejs npm pandoc`
@@ -13,8 +14,8 @@
       2. `CREATE USER 'wiki' IDENTIFIED BY 'wikiedu';`
       3. `GRANT ALL PRIVILEGES ON *.* TO 'wiki';`
       4. `exit;`
-4. Close and reopen the Ubuntu terminal (to activate RVM)
-5. In Ubuntu terminal:
+5. Close and reopen the Ubuntu terminal (to activate RVM)
+6. In Ubuntu terminal:
    1. `sudo usermod -a -G rvm $USER` where $User is your UNIX username (preferably restart your machine after this step)
    2. `rvm install 3.1.2`
    3.  Clone the WikiEduDashboard git repo and enter the directory
@@ -28,4 +29,4 @@
    9. `bundle exec rake db:migrate`
    10. `rails s`
 
-6. Now you should have it running at localhost:3000
+7. Now you should have it running at localhost:3000
